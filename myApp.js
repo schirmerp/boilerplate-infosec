@@ -12,7 +12,13 @@ app.use(helmet.xssFilter())
 app.use(helmet.noSniff())
 app.use(helmet.ieNoOpen())
 
+const ninety = 90 * 24 * 60 * 60
+const hsts = {
+  maxAge: ninety,
+  force: true
+}
 
+app.use(helmet.hsts(hsts))
 
 
 
