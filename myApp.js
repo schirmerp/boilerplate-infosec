@@ -23,9 +23,9 @@ app.use(helmet.dnsPrefetchControl())
 app.use(helmet.noCache())
 const directives = {
   defaultSrc: ["'self'"],
-  scriptSrc: 'trusted-cdn.com'
+  scriptSrc: ["'self'",'trusted-cdn.com']
 }
-app.use(helmet.contentSecurityPolicy(directives))
+app.use(helmet.contentSecurityPolicy({directives: directives}))
 
 
 
