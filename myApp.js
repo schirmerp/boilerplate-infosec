@@ -5,6 +5,10 @@ const helmet = require('helmet')
 
 app.use(helmet())
 
+const PORT = process.env.PORT || 3030
+
+app.listen(PORT, ()=>{`infosec app started on port ${PORT}`})
+
 
 
 
