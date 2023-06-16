@@ -19,6 +19,7 @@ const hsts = {
 }
 
 app.use(helmet.hsts(hsts))
+app.use(helmet.dnsPrefetchControl())
 
 
 
