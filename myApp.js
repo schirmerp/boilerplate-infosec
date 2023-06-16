@@ -20,6 +20,8 @@ const hsts = {
 
 app.use(helmet.hsts(hsts))
 app.use(helmet.dnsPrefetchControl())
+app.use(helmet.noCache())
+
 
 
 
