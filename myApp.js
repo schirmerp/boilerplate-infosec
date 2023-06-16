@@ -21,7 +21,11 @@ const hsts = {
 app.use(helmet.hsts(hsts))
 app.use(helmet.dnsPrefetchControl())
 app.use(helmet.noCache())
-
+const directives = {
+  defaultSrc: ["'self'"],
+  scriptSrc: 'trusted-cdn.com'
+}
+app.use(helmet.contentSecurityPolicy(directives))
 
 
 
